@@ -1,6 +1,8 @@
 const db = require("./database");
 
 const init = async () => {
+  // To achieve a multi level connection furthe we need to modify the database schema and the query accordingly.
+  // So we may create separate tables for different levels of connections  (horizontal partitioning).
   await db.run(
     "CREATE TABLE Users (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(32));"
   );
